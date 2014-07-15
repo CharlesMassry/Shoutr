@@ -1,4 +1,9 @@
-<%= @user.username %>
+<div class="sidebar">
+  </br><div class="userinfo" >
+    <%= @user.username %></br>
+    Following: <%= render @user.followed_users %>
+</div>
+</div>
 
 <div class="middle">
   <%= render @shouts %>

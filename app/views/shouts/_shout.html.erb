@@ -1,5 +1,5 @@
 <%= div_for shout do %>
-  <div class="super">
+  <div class="super shout-border">
   <div class="shout blue box">
     <%= link_to "@#{shout.user.username}", shout.user %> · <%= time_ago_in_words(shout.created_at) %> ago<br>
     <span class="black"><%= shout.body %></span>

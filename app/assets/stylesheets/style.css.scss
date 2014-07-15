@@ -23,9 +23,16 @@ form {
 }
 
 .sidebar {
+  left: 5%;
   float: left;
-  height: 100%;
+  position: absolute;
+  height: 43%;
+  width: 197px;
+  border-radius: 5px;
+  margin-top: 40px;
+  background-color: $white;
 }
+
 
 .shout_body {
   border-color: rgba(0,132,180,0.25);
@@ -106,3 +113,22 @@ div {
     color: $white;
   }
 }
+.middle {
+  left: 30%;
+  position: absolute;
+  height: 100%;
+  width: 40em;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-top: 40px;
+  background-color: $white;
+}
+
+.shout-border {
+  border-bottom: 1px solid $gray;
+}
+
