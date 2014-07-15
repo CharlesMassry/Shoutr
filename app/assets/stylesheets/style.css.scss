@@ -1,5 +1,108 @@
+$twitter: #55acee;
+$gray: #ccd6dd;
+$white: #f5f8fa;
+$black: #292f33;
+
+body {
+  background-color: $twitter;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+  text-decoration: underline;
+  }
+}
+
+form {
+  display: inline-block;
+  padding: 10px;
+  background-color: #E5F2F7;
+  border: 1px $gray;
+  border-radius: 5px;
+}
+
+.sidebar {
+  float: left;
+  height: 100%;
+}
+
+.shout_body {
+  border-color: rgba(0,132,180,0.25);
+}
+
+.shout_button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: $white;
+  background-color: $twitter;
+  border-color: $gray;
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  &:hover {
+    background-color: darken($twitter, 20%)
+  }
+}
+
 div {
   &.new_form {
    padding: 10px;
+  }
+}
+
+.new_shout {
+  padding-bottom: 10px;
+}
+
+.shout {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.super {
+  display: block;
+  padding-bottom: 10px;
+}
+.box {
+  padding: 10px;
+  display: inline-block;
+  background-color: $white;
+  border-color: $gray;
+  border-radius: 5px;
+  border-width: 2px;
+}
+
+.white {
+  color: $white;
+}
+
+.blue {
+  color: $twitter;
+  a {
+    color: $twitter;
+  }
+}
+
+.black {
+  color: $black;
+}
+
+.sign_out {
+  a {
+    color: $white;
   }
 }

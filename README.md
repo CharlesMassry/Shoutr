@@ -17,4 +17,3 @@ app where users can post limited messages
 -user_id
 
 -timestamps
-

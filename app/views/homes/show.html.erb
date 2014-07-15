@@ -1,9 +1,7 @@
-<% if !signed_in? %>
-  <h1>Welcome to Shoutr</h1>
-  <div class="new_form">
-    <%= render "sign_in_form" %>
-  </div>
-  <div class="new_form">
-    <%= render "sign_up_form" %>
-  </div>
-<% end %>
+<h1>Welcome to Shoutr</h1>
+<div class="new_form">
+  <%= render "sign_in_form" %>
+</div>
+<div class="new_form">
+  <%= render "sign_up_form", user: @user %>
+</div>

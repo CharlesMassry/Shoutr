@@ -13,4 +13,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 
+gem 'font-awesome-sass'
+
 gem 'spring',        group: :development
