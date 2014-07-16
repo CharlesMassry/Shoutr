@@ -1,7 +1,22 @@
 <div class="sidebar">
-  </br><div class="userinfo" >
-    <%= @user.username %></br>
-    Following: <%= render @user.followed_users %>
+  <div class="userinfo" >
+    <h3 class="black box">@<%= @user.username %></h3>
+    <div class="box">
+
+      <% if current_user != @user %>
+        <% if current_user.following?(@user) %>
+          <%= button_to(unfollow_user_path(@user), class: "button unfollow", method: :delete) do %>
+            Unfollow
+          <% end %>
+        <% else %>
+          <%= button_to(follow_user_path(@user), class: "button follow") do  %>
+            Follow
+          <% end %>
+        <% end %>
+      <% end %>
+
+        Following: <%= render @user.followed_users %>
+    </div>
 </div>
 </div>
 

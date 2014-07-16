@@ -16,3 +16,12 @@
 <div class="middle">
   <%= render @shouts %>
 </div>
+
+<div class="right-side">
+  <div class="following">
+    Following: <%= render current_user.followed_users %>
+  </div>
+  <div class="followers">
+    Followers: <%= render current_user.followers %>
+  </div>
+</div>
