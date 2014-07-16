@@ -14,14 +14,14 @@
 </div>
 
 <div class="middle">
-  <%= render @shouts %>
+  <%= render current_user.timeline %>
 </div>
 
 <div class="right-side">
-  <div class="following">
-    Following: <%= render current_user.followed_users %>
-  </div>
-  <div class="followers">
-    Followers: <%= render current_user.followers %>
-  </div>
+  <h4 class="following">
+    Following: <%= render @followed_users %>
+  </h4>
+  <h4 class="followers">
+    Followers: <%= render @followers %>
+  </h4>
 </div>

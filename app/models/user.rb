@@ -5,16 +5,26 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
 
   has_many :followed_user_relationships,
-            class_name: "FollowingRelationship",
-            foreign_key: :follower_id
+           class_name: "FollowingRelationship",
+           foreign_key: :follower_id
 
   has_many :followed_users, through: :followed_user_relationships
 
   has_many :following_user_relationships,
-            class_name: "FollowingRelationship",
-            foreign_key: :followed_user_id
+           class_name: "FollowingRelationship",
+           foreign_key: :followed_user_id
 
   has_many :followers, through: :following_user_relationships
+
+  def timeline
+    Shout.where(user_id: timeline_users).order(created_at: :desc)
+  end
+
+  def timeline_users
+    users = []
+    users << id
+    users << followed_user_ids
+  end
 
   def following?(user)
     followed_users.include?(user)
