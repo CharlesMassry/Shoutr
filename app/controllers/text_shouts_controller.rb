@@ -1,4 +1,4 @@
-class ShoutsController < ApplicationController
+class TextShoutsController < ApplicationController
   def create
     text_shout = TextShout.new(text_shout_params)
     shout = current_user.shouts.new(content: text_shout)
@@ -12,6 +12,6 @@ class ShoutsController < ApplicationController
   private
 
   def text_shout_params
-    params.require(:shout).permit(:content)
+    params.require(:text_shout).permit(:content)
   end
 end

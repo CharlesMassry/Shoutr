@@ -14,6 +14,8 @@ gem 'turbolinks'
 
 gem 'font-awesome-sass'
 
+gem 'paperclip'
+
 group :development do
   gem 'spring'
   gem 'monban-generators', '~> 0.0.3'

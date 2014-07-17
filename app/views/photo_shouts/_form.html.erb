@@ -1,0 +1,11 @@
+<div>
+<%= form_for shout, html: { class: "new_shout" } do |form| %>
+  <%= render "errors", object: shout %>
+  <div>
+    <%= form.file_field :image, class: "shout_body" %>
+  </div>
+  <%= button_tag(class: "shout_button") do %>
+    <%= icon("bullhorn") %>
+  <% end %>
+<% end %>
+</div>

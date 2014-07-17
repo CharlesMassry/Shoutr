@@ -15,11 +15,10 @@ a {
 }
 
 form {
-  display: inline-block;
+  display: block;
   padding: 10px;
   background-color: #E5F2F7;
-  border: 1px $gray;
-  border-radius: 5px;
+  border-bottom: 1px $gray;
 }
 
 .sidebar {

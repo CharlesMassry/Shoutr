@@ -10,11 +10,14 @@
   </div>
 </div>
 
-<%= render "shouts/form", shout: @shout %>
+<%= render "text_shouts/form", shout: @text_shout %>
+<%= render "photo_shouts/form", shout: @photo_shout %>
 </div>
 
 <div class="middle">
-  <%= render current_user.timeline %>
+  <% if current_user.followed_users.any? %>
+    <%= render current_user.timeline %>
+  <% end %>
 </div>
 
 <div class="right-side">
