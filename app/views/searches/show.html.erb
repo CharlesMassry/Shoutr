@@ -1,0 +1,5 @@
+<div class="middle">
+<% @search.each do |text_shout| %>
+  <%= render "shouts/shout", shout: text_shout.shout %>
+<% end %>
+</div>

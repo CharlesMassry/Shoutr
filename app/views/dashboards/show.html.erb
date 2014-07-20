@@ -17,6 +17,8 @@
 <div class="middle">
   <% if current_user.followed_users.any? %>
     <%= render current_user.timeline %>
+  <% else %>
+    <%= render current_user.shouts %>
   <% end %>
 </div>
 

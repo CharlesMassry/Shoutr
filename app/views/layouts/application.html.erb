@@ -11,6 +11,9 @@
 <% if signed_in? %>
   Welcome <%= current_user.username %>
   <span class="sign_out"><%= link_to "Sign out", session_path, method: :delete %></span>
+  <div>
+    <%= render "search" %>
+  </div>
 <% end %>
 </nav>
 
