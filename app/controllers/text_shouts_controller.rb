@@ -9,6 +9,13 @@ class TextShoutsController < ApplicationController
     end
   end
 
+  def destroy
+    text_shout = TextShout.find(params[:id])
+    text_shout.shout.delete
+    text_shout.delete
+    redirect_to dashboard_path
+  end
+
   private
 
   def text_shout_params

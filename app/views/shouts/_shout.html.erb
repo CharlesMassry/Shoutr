@@ -2,7 +2,12 @@
   <div class="super shout-border">
   <div class="shout blue box">
     <%= link_to "@#{shout.user.username}", shout.user %> <span class="black">·</span> <%= time_ago_in_words(shout.created_at) %> ago<br>
+
     <span class="black"><%= render shout.content %></span>
+
+    <% if shout.user == current_user %>
+      <%= link_to "Delete", shout.content, method: :delete  %>
+    <% end %>
   </div>
 </div>
 <% end %>

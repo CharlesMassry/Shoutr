@@ -9,6 +9,14 @@ class PhotoShoutsController < ApplicationController
     end
   end
 
+  def destroy
+    photo_shout = PhotoShout.find(params[:id])
+    photo_shout.image.destroy
+    photo_shout.shout.delete
+    photo_shout.delete
+    redirect_to dashboard_path
+  end
+
   private
 
   def photo_shout_params
