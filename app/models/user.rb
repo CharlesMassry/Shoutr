@@ -42,10 +42,6 @@ class User < ActiveRecord::Base
 
   private
 
-  def eager_user
-    includes(:shouts).find(id)
-  end
-
   def timeline
     Shout.where(user_id: timeline_users).order(created_at: :desc)
   end
