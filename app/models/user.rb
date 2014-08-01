@@ -16,14 +16,12 @@ class User < ActiveRecord::Base
 
   has_many :followers, through: :following_user_relationships
 
-  def timeline
-    Shout.where(user_id: timeline_users).order(created_at: :desc)
-  end
-
-  def timeline_users
-    users = []
-    users << id
-    users << followed_user_ids
+  def dashboard_shouts
+    if followed_user_ids.any?
+      timeline.includes(:content, :user)
+    else
+      shouts.includes(:content)
+    end
   end
 
   def following?(user)
@@ -40,5 +38,21 @@ class User < ActiveRecord::Base
 
   def to_param
     username
+  end
+
+  private
+
+  def eager_user
+    includes(:shouts).find(id)
+  end
+
+  def timeline
+    Shout.where(user_id: timeline_users).order(created_at: :desc)
+  end
+
+  def timeline_users
+    users = []
+    users << id
+    users << followed_user_ids
   end
 end

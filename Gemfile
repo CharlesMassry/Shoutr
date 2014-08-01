@@ -20,4 +20,5 @@ group :development do
   gem 'spring'
   gem 'monban-generators', '~> 0.0.3'
   gem 'rails-erd'
+  gem 'bullet'
 end

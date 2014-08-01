@@ -1,9 +1,13 @@
 class TextShoutsController < ApplicationController
   def create
-    text_shout = TextShout.new(text_shout_params)
-    shout = current_user.shouts.new(content: text_shout)
+    @text_shout = TextShout.new(text_shout_params)
+    shout = current_user.shouts.new(content: @text_shout)
     if shout.save
-      redirect_to dashboard_path
+      respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js {}
+        format.json { render json: @text_shout.to_json }
+      end
     else
       render "dashboard/show"
     end

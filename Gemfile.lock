@@ -30,6 +30,9 @@ GEM
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     builder (3.2.2)
+    bullet (4.13.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (>= 1.6.0)
     choice (0.1.6)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -125,6 +128,7 @@ GEM
     uglifier (2.5.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uniform_notifier (1.6.2)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -132,6 +136,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bullet
   coffee-rails (~> 4.0.0)
   font-awesome-sass
   jquery-rails
