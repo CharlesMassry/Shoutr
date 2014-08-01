@@ -17,11 +17,7 @@ class User < ActiveRecord::Base
   has_many :followers, through: :following_user_relationships
 
   def dashboard_shouts
-    if followed_user_ids.any?
-      timeline.includes(:content, :user)
-    else
-      shouts.includes(:content)
-    end
+    timeline.includes(:content, :user)
   end
 
   def following?(user)
@@ -43,12 +39,10 @@ class User < ActiveRecord::Base
   private
 
   def timeline
-    Shout.where(user_id: timeline_users).order(created_at: :desc)
+    Shout.where(user_id: timeline_user_ids).order(created_at: :desc)
   end
 
-  def timeline_users
-    users = []
-    users << id
-    users << followed_user_ids
+  def timeline_user_ids
+    [id] + followed_user_ids
   end
 end
